@@ -1,6 +1,12 @@
 {
   "rules": {
     ".read": true,
-    ".write": false
+    ".write": false,
+    "onlineUsers": {
+      "$uid": {
+        ".write": "$uid === auth.uid",
+        ".validate": "newData.hasChild('displayName')"
+      }
+    }
   }
 }
